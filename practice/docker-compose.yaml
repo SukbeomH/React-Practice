@@ -1,0 +1,16 @@
+version: "3.7"
+# DevelopMent
+services:
+  my-react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/myReact/src
+    env_file:
+      - ./.env
+    environment:
+      - TZ=Asia/Seoul
+      - CHOKIDAR_USEPOLLING=true
